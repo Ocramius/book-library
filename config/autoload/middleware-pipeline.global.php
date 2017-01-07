@@ -21,6 +21,7 @@ return [
         ],
         'routing' => [
             'middleware' => [
+                App\Middleware\ErrorCatchingMiddleware::class,
                 ApplicationFactory::ROUTING_MIDDLEWARE,
                 Helper\UrlHelperMiddleware::class,
                 PSR7Session\Http\SessionMiddleware::class,
@@ -32,7 +33,6 @@ return [
         'error' => [
             'middleware' => [
             ],
-            'error'    => true,
             'priority' => -10000,
         ],
     ],
